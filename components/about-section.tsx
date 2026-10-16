@@ -101,7 +101,7 @@ export default function AboutSection() {
 
             {/* Heading */}
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 leading-tight">
-              25+ Years in IT Leadership,{" "}
+              25+ Years in IT,{" "}
               <span className="text-blue-600">Now Powering Your Career Growth</span>
             </h2>
 
