@@ -57,16 +57,21 @@ export default function FeatureCardsSection() {
 
     const interval = setInterval(() => {
       setProgress((prev) => {
-        if (prev >= 100) {
-          setActiveCard((current) => (current + 1) % services.length);
-          return 0;
-        }
+        if (prev >= 100) return 100;
         return prev + 2; // 2% every 100ms = 5000ms total
       });
     }, 100);
 
     return () => clearInterval(interval);
   }, [isPaused, activeCard]);
+
+  // When progress reaches 100%, advance forward 1 -> 2 -> 3 -> 1
+  useEffect(() => {
+    if (progress >= 100) {
+      setActiveCard((prev) => (prev + 1) % services.length);
+      setProgress(0);
+    }
+  }, [progress]);
 
   const handleCardClick = (index: number) => {
     setActiveCard(index);
