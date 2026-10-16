@@ -91,7 +91,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.38, ease: "easeOut" }}
               className="text-lg sm:text-xl md:text-2xl lg:text-[26px] text-zinc-800 font-bold tracking-tight"
             >
-              Trusted by 30+ Job Applicants
+              Trusted by 200+ Job Applicants
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 12 }}
