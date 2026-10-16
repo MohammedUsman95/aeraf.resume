@@ -111,10 +111,7 @@ export default function BenefitsSection() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
       >
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-4 shadow-xs">
-          <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-          The Competitive Advantage
-        </div>
+
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-tight">
           Why Job Seekers Choose{" "}
           <span className="relative inline-block">

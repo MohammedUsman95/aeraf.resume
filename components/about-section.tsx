@@ -81,33 +81,7 @@ export default function AboutSection() {
                 </div>
               </motion.div>
 
-              {/* Floating Stat Badge: Trusted by Candidates */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.85, y: -15 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-                className="absolute -bottom-4 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md border border-zinc-200/80 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3"
-              >
-                <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 flex-shrink-0">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-zinc-900 leading-none">
-                    94% Callback Rate
-                  </p>
-                  <p className="text-xs text-zinc-500 font-medium mt-0.5">
-                    Within 30 Days
-                  </p>
-                </div>
-              </motion.div>
+
             </div>
           </motion.div>
 
