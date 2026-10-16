@@ -44,7 +44,7 @@ export default function AboutSection() {
               {/* Main Photo Frame */}
               <div className="relative aspect-[4/5] w-full rounded-[28px] overflow-hidden border-2 border-white shadow-2xl bg-zinc-100 ring-1 ring-zinc-200/70">
                 <Image
-                  src="/profile.jpg"
+                  src="/aeraf-portrait.png"
                   alt="Mohammed Aeraf - Resume Strategist & Corporate Veteran"
                   fill
                   className="object-cover object-top hover:scale-105 transition-transform duration-500"
