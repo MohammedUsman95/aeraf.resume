@@ -60,9 +60,6 @@ export default function WrittenTestimonials() {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-tight">
           Hear It From Our Candidates
         </h2>
-        <p className="text-zinc-600 mt-3 text-sm sm:text-base">
-          Real results from ambitious job seekers who transformed their resumes and accelerated their careers.
-        </p>
       </motion.div>
 
       {/* Clean & Simple Testimonials Grid */}

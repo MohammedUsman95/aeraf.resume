@@ -122,9 +122,6 @@ export default function BenefitsSection() {
             <span className="absolute bottom-1.5 left-0 w-full h-[3px] bg-red-500 rounded-full" />
           </span>
         </h2>
-        <p className="text-zinc-600 mt-4 text-base sm:text-lg leading-relaxed">
-          Every section, bullet point, and format decision is strategically engineered to pass automated filters and compel recruiters to interview you.
-        </p>
       </motion.div>
 
       {/* Benefits List / Cards */}

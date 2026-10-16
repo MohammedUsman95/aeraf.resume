@@ -160,9 +160,6 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900">
             Your Journey to a Better Resume
           </h2>
-          <p className="text-zinc-600 mt-3 text-base sm:text-lg max-w-xl mx-auto">
-            Choose your package, share your details, and let us take care of the rest.
-          </p>
         </motion.div>
         <HowItWorks />
       </section>

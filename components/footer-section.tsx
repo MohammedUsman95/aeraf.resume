@@ -28,9 +28,6 @@ export default function FooterSection() {
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight">
                 Transform Your Resume. Land More Interviews.
               </h3>
-              <p className="text-zinc-400 text-sm sm:text-base mt-2.5 leading-relaxed">
-                Take the guesswork out of your job search. Work directly with a 20+ year corporate veteran to craft an irresistible CV.
-              </p>
             </div>
 
             <div className="flex-shrink-0">

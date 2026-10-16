@@ -114,9 +114,6 @@ export default function FeatureCardsSection() {
           >
             Resume Services
           </h2>
-          <p className="text-zinc-500 text-sm sm:text-base max-w-xl text-center">
-            Click any service to preview templates, strategic use cases, and tailored benefits.
-          </p>
         </motion.div>
 
         {/* Dynamic Image Display with Link to Detail Page */}
