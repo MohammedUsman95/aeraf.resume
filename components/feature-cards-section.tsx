@@ -93,16 +93,7 @@ export default function FeatureCardsSection() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex w-full flex-col items-center justify-start gap-3.5 overflow-hidden mb-12 sm:mb-16"
         >
-          <span
-            className="inline-flex items-center rounded-full px-3.5 py-1 text-xs font-semibold tracking-widest uppercase"
-            style={{
-              background: "var(--bg-secondary)",
-              color: "var(--text-primary)",
-              border: "1px solid var(--border-medium)",
-            }}
-          >
-            Our Expertise
-          </span>
+
 
           <h2
             className="flex w-full max-w-2xl justify-center text-center font-black tracking-tight uppercase whitespace-nowrap"
@@ -133,11 +124,10 @@ export default function FeatureCardsSection() {
                   {services.map((item, idx) => (
                     <div
                       key={item.slug}
-                      className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
-                        activeCard === idx
+                      className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${activeCard === idx
                           ? "scale-100 opacity-100 z-10"
                           : "scale-105 opacity-0 z-0 pointer-events-none"
-                      }`}
+                        }`}
                     >
                       <Image
                         src={item.imageSrc}
@@ -232,11 +222,10 @@ function FeatureCard({
           onClick();
         }
       }}
-      className={`group relative flex w-full cursor-pointer flex-col items-start justify-between gap-5 self-stretch overflow-hidden px-6 py-6 md:flex-1 select-none bg-white transition-all duration-300 ${
-        isActive
+      className={`group relative flex w-full cursor-pointer flex-col items-start justify-between gap-5 self-stretch overflow-hidden px-6 py-6 md:flex-1 select-none bg-white transition-all duration-300 ${isActive
           ? "border-b-2 md:border-b-0 md:border-r last:border-r-0 border-zinc-900 bg-white"
           : "border-b md:border-b-0 md:border-r last:border-r-0 border-zinc-200/80 bg-white hover:bg-zinc-50/90"
-      }`}
+        }`}
       onClick={onClick}
     >
       {/* Active progress bar */}
@@ -254,11 +243,10 @@ function FeatureCard({
       {/* Title */}
       <div className="w-full flex items-start justify-start">
         <span
-          className={`text-base sm:text-lg font-bold tracking-tight leading-snug transition-colors duration-200 ${
-            isActive
+          className={`text-base sm:text-lg font-bold tracking-tight leading-snug transition-colors duration-200 ${isActive
               ? "text-zinc-950"
               : "text-zinc-800 group-hover:text-blue-600"
-          }`}
+            }`}
         >
           {title}
         </span>
@@ -272,11 +260,10 @@ function FeatureCard({
             // Allow navigation to proceed without blocking
             e.stopPropagation();
           }}
-          className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 shadow-2xs group/btn bg-white border ${
-            isActive
+          className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 shadow-2xs group/btn bg-white border ${isActive
               ? "border-zinc-300 hover:border-zinc-900 text-zinc-900 hover:bg-zinc-50 hover:shadow-xs"
               : "border-zinc-200 hover:border-zinc-400 text-zinc-700 hover:text-zinc-900 hover:bg-zinc-50 hover:shadow-xs"
-          }`}
+            }`}
         >
           <span>View Service</span>
           <svg

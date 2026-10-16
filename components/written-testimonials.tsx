@@ -54,9 +54,7 @@ export default function WrittenTestimonials() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="text-center max-w-2xl mx-auto mb-12 md:mb-16"
       >
-        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold tracking-wider uppercase mb-3">
-          Client Feedback
-        </span>
+
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-tight">
           Hear It From Our Candidates
         </h2>
