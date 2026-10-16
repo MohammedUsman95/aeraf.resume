@@ -14,7 +14,7 @@ interface BenefitBox {
 const benefitBoxes: BenefitBox[] = [
   {
     id: "experience",
-    title: "20+ Years Experience",
+    title: "25+ Years Experience",
     imageSrc: "/why-choose-us/experience.png",
   },
   {

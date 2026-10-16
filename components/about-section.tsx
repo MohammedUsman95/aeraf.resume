@@ -7,8 +7,8 @@ import { motion } from "motion/react";
 export default function AboutSection() {
   const highlights = [
     {
-      title: "20+ Years of Corporate Leadership",
-      desc: "Extensive experience managing business divisions, evaluating talent, and leading hiring processes.",
+      title: "25+ Years of IT Experience",
+      desc: "Deep understanding of professional skills, career growth, and what makes a resume stand out.",
     },
     {
       title: "Insider Hiring Board Perspective",
@@ -60,7 +60,7 @@ export default function AboutSection() {
                 </div>
               </div>
 
-              {/* Floating Pill Badge: 20+ Years Corporate Exp */}
+              {/* Floating Pill Badge: 25+ Years IT Exp */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.85, y: 15 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -69,14 +69,14 @@ export default function AboutSection() {
                 className="absolute -top-4 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md border border-zinc-200/80 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3"
               >
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-black text-sm shadow-sm flex-shrink-0">
-                  20+
+                  25+
                 </div>
                 <div>
                   <p className="text-xs text-zinc-500 font-semibold uppercase tracking-wider">
                     Experience
                   </p>
                   <p className="text-sm font-bold text-zinc-900 leading-none mt-0.5">
-                    Years Corporate
+                    Years in IT
                   </p>
                 </div>
               </motion.div>
@@ -101,7 +101,7 @@ export default function AboutSection() {
 
             {/* Heading */}
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 leading-tight">
-              20+ Years in Corporate Leadership,{" "}
+              25+ Years in IT Leadership,{" "}
               <span className="text-blue-600">Now Powering Your Career Growth</span>
             </h2>
 
