@@ -111,15 +111,15 @@ export default function BenefitsSection() {
             }}
             className="group relative bg-white rounded-3xl p-8 sm:p-9 border border-zinc-200/80 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_16px_36px_-6px_rgba(0,0,0,0.1)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center justify-center text-center gap-5 min-h-[190px]"
           >
-            {/* Top Icon Badge */}
-            <div className="relative w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-blue-50/90 border border-blue-100 shadow-xs flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-100/70 transition-all duration-300 flex-shrink-0">
+            {/* Top Icon Badge with distinct light blue background */}
+            <div className="relative w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-[#e8f2fe] border border-blue-200/70 shadow-xs flex items-center justify-center group-hover:scale-110 group-hover:bg-[#dbeafe] transition-all duration-300 flex-shrink-0">
               {box.imageSrc ? (
-                <div className="relative w-8 h-8 sm:w-9 sm:h-9">
+                <div className="relative w-9 h-9 sm:w-10 sm:h-10">
                   <Image
                     src={box.imageSrc}
                     alt={box.title}
                     fill
-                    sizes="40px"
+                    sizes="48px"
                     className="object-contain"
                   />
                 </div>
