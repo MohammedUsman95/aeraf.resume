@@ -7,20 +7,20 @@ import { motion } from "motion/react";
 export default function AboutSection() {
   const highlights = [
     {
-      title: "20+ Years Corporate Leadership",
-      desc: "Extensive background managing cross-functional business divisions, evaluating top-tier talent, and steering hiring committees across competitive corporate environments.",
+      title: "20+ Years of Corporate Leadership",
+      desc: "Extensive experience managing business divisions, evaluating talent, and leading hiring processes.",
     },
     {
       title: "Insider Hiring Board Perspective",
-      desc: "Having personally evaluated thousands of candidate profiles, I know the exact signals, metrics, and phrasing that trigger a recruiter to schedule an interview.",
+      desc: "Having recruited and evaluated candidates firsthand, I know what employers look for in a strong resume.",
     },
     {
       title: "Bespoke & Uniquely Handcrafted",
-      desc: "Zero generic AI shortcuts or one-size-fits-all formats. Every single resume is meticulously customized to articulate your authentic career trajectory and leadership value.",
+      desc: "Every resume is tailored to highlight your career journey, achievements, and professional strengths.",
     },
     {
       title: "Direct 1-on-1 Strategic Collaboration",
-      desc: "You collaborate directly with me throughout the refinement phase until your resume accurately reflects your seniority, accomplishments, and market worth.",
+      desc: "Work directly with me to refine your resume and accurately showcase your experience and value.",
     },
   ];
 
@@ -107,7 +107,7 @@ export default function AboutSection() {
 
             {/* Intro paragraph */}
             <p className="text-zinc-600 text-base sm:text-lg leading-relaxed mt-4">
-              Over the last two decades, I have seen exceptional talent get passed over repeatedly simply because their CV failed to articulate their real impact. Your resume isn&apos;t just a job log—it&apos;s your high-stakes pitch to decision-makers.
+              A great resume doesn&apos;t just list experience—it communicates your value and gets you noticed.
             </p>
 
             {/* Points from wireframe */}
