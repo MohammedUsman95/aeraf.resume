@@ -96,11 +96,10 @@ export default function FeatureCardsSection() {
 
 
           <h2
-            className="flex w-full max-w-2xl justify-center text-center font-black tracking-tight uppercase whitespace-nowrap"
+            className="flex w-full max-w-2xl justify-center text-center font-extrabold tracking-tight whitespace-nowrap text-zinc-900"
             style={{
               fontSize: "clamp(2rem, 5vw, 3.8rem)",
               lineHeight: 1.1,
-              color: "var(--text-primary)",
             }}
           >
             Resume Services
