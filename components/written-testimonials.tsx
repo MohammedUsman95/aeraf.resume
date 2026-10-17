@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 interface Testimonial {
   name: string;
   role: string;
-  company: string;
+  company?: string;
   avatar: string;
   rating: number;
   quote: string;
@@ -15,37 +15,34 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Sarah Jenkins",
-    role: "Senior Product Manager",
-    company: "Tier-1 Tech",
-    avatar: "/Clients/face-1.jpg",
-    rating: 5,
-    quote:
-      "I had been applying for 4 months with zero responses. Aeraf restructured my entire career story using quantified metrics. Within 3 weeks of uploading my new CV, I had interviews lined up with 3 major enterprise companies and accepted a Senior PM role!",
-  },
-  {
-    name: "David Chen",
-    role: "Engineering Director",
-    company: "Fintech Leader",
+    name: "Aliah Afreen",
+    role: "UAE Job Seeker",
     avatar: "/Clients/face-2.jpg",
     rating: 5,
     quote:
-      "Working with Mohammed was an absolute game changer. His 20+ years of corporate background was immediately evident. He knew exactly what executive search committees look for and positioned my technical leadership flawlessly.",
+      "I had a great experience with Aeraf when they helped me prepare my CV. They understood my experience and presented my skills and professional background in a clear, well-structured, and professional manner. I truly appreciate their support and effort in creating a CV that reflects my experience effectively. I would definitely recommend Aeraf’s CV writing services to anyone looking to enhance their professional profile and make a strong impression.",
   },
   {
-    name: "Priya Sharma",
-    role: "Marketing Strategist",
-    company: "Global Brands",
+    name: "Abdul Basit Ruknuddin",
+    role: "Working Professional",
+    avatar: "/Clients/face-1.jpg",
+    rating: 5,
+    quote:
+      "I opted for the resume package and was pleased with the overall service. Having my resume, cover letter, and LinkedIn profile content prepared together made the process convenient and consistent. A useful service for anyone looking to improve their professional presentation.",
+  },
+  {
+    name: "Aysha Amal",
+    role: "Academic Teacher",
     avatar: "/Clients/face-3.jpg",
     rating: 5,
     quote:
-      "The ATS optimization made an immediate difference. My previous resume wasn't getting past the automated screeners. Aeraf revamped both my CV and cover letter, and recruiters started reaching out to me directly on LinkedIn within days.",
+      "I’m very happy with the resume prepared for me. The layout is professional, the content is well-organized, and my skills and experience are presented clearly. The ATS-friendly format was exactly what I needed for my job applications.",
   },
 ];
 
 export default function WrittenTestimonials() {
   return (
-    <section className="w-full max-w-6xl mx-auto px-6 py-16 md:py-24 relative z-10">
+    <section id="testimonials" className="w-full max-w-6xl mx-auto px-6 py-16 md:py-24 relative z-10">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -111,7 +108,8 @@ export default function WrittenTestimonials() {
                   {item.name}
                 </p>
                 <p className="text-xs text-zinc-500 font-medium">
-                  {item.role} • {item.company}
+                  {item.role}
+                  {item.company ? ` • ${item.company}` : ""}
                 </p>
               </div>
             </div>

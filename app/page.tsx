@@ -1,8 +1,10 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import KineticGrid from "@/components/ui/kinetic-grid";
+import LimelightNav from "@/components/ui/limelight-nav";
 import HeroFannedCards from "@/components/hero-fanned-cards";
 import FeatureCardsSection from "@/components/feature-cards-section";
 import WrittenTestimonials from "@/components/written-testimonials";
@@ -12,34 +14,55 @@ import AboutSection from "@/components/about-section";
 import FooterSection from "@/components/footer-section";
 
 export default function Home() {
+  useEffect(() => {
+    // Force browser to reset scroll position to the top upon page refresh
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+
+    const handleBeforeUnload = () => {
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, []);
+
   return (
     <KineticGrid className="bg-white text-zinc-900 font-sans">
-      {/* Top Navigation Bar */}
+      {/* Top Fixed Navigation Bar - Sticks permanently on top */}
       <motion.header
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="w-full px-6 py-5 md:px-12 flex items-center justify-between border-b border-zinc-200/50 bg-transparent relative z-20"
+        className="fixed top-0 left-0 right-0 z-50 w-full px-6 py-3.5 md:px-12 flex items-center justify-between border-b border-zinc-200/70 bg-white/90 backdrop-blur-md shadow-2xs"
       >
         {/* Top Left: Small rounded image + aeraf.resume */}
-        <div className="flex items-center gap-3">
-          <div className="relative w-12 h-12 rounded-full overflow-hidden border border-zinc-200 bg-white flex-shrink-0 shadow-xs">
+        <a href="#home" className="flex items-center gap-3 group cursor-pointer">
+          <div className="relative w-11 h-11 rounded-full overflow-hidden border border-zinc-200 bg-white flex-shrink-0 shadow-xs group-hover:scale-105 transition-transform">
             <Image
               src="/aeraf.jpeg"
               alt="Mohammed Aeraf"
               fill
               className="object-cover"
-              sizes="48px"
+              sizes="44px"
               priority
             />
           </div>
           <div className="relative">
-            <span className="font-bold text-2xl tracking-tight text-zinc-900">
+            <span className="font-bold text-xl sm:text-2xl tracking-tight text-zinc-900">
               aeraf.resume
             </span>
             {/* Red accent line as shown in wireframe */}
             <div className="h-[2px] w-full bg-red-500 rounded-full mt-0.5" />
           </div>
+        </a>
+
+        {/* Center: Limelight Spotlight Navigation Bar connecting all sections */}
+        <div className="hidden sm:flex items-center justify-center">
+          <LimelightNav />
         </div>
 
         {/* Top Right: LinkedIn Logo + DM on Linkedin */}
@@ -47,20 +70,20 @@ export default function Home() {
           href="https://linkedin.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl border border-blue-200 hover:border-blue-400 bg-white hover:bg-blue-50/50 shadow-xs transition-colors group text-zinc-800"
+          className="flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-xl border border-blue-200 hover:border-blue-400 bg-white hover:bg-blue-50/50 shadow-xs transition-colors group text-zinc-800"
         >
           {/* LinkedIn Icon */}
-          <div className="w-8 h-8 rounded bg-[#0A66C2] flex items-center justify-center text-white font-bold text-sm">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded bg-[#0A66C2] flex items-center justify-center text-white font-bold text-xs sm:text-sm">
             in
           </div>
-          <span className="text-base font-semibold text-zinc-800 group-hover:text-blue-600 transition-colors">
+          <span className="text-sm sm:text-base font-semibold text-zinc-800 group-hover:text-blue-600 transition-colors">
             DM on Linkedin
           </span>
         </a>
       </motion.header>
 
-      {/* Hero Section */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-6 py-16 md:py-24 flex flex-col items-center justify-between">
+      {/* Hero Section with top padding for fixed navbar */}
+      <main id="home" className="flex-1 max-w-6xl w-full mx-auto px-6 pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-24 flex flex-col items-center justify-between">
         {/* Center Tagline & Social Proof */}
         <div className="flex flex-col items-center text-center w-full max-w-6xl mx-auto space-y-2">
           {/* Tagline */}
@@ -149,7 +172,7 @@ export default function Home() {
       <WrittenTestimonials />
 
       {/* How It Works / Journey Section */}
-      <section className="w-full max-w-6xl mx-auto px-6 pt-12 md:pt-20 pb-28 md:pb-36 relative z-10">
+      <section id="journey" className="w-full max-w-6xl mx-auto px-6 pt-12 md:pt-20 pb-28 md:pb-36 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

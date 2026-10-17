@@ -2,9 +2,22 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 
 export default function FooterSection() {
+  const scrollToSection = (e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    if (id === "top") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <footer className="w-full relative z-20 border-t border-zinc-200/80 bg-zinc-50/70 pt-16 pb-12 mt-12">
       <div className="max-w-6xl mx-auto px-6">
@@ -81,71 +94,131 @@ export default function FooterSection() {
               </div>
             </div>
             <p className="text-zinc-600 text-sm leading-relaxed max-w-sm mt-2">
-              High-impact, ATS-optimized executive resumes crafted by 20+ years of corporate leadership and talent acquisition expertise.
+              High-impact, ATS-optimized executive resumes crafted with 25+ years of corporate leadership and talent acquisition expertise.
             </p>
+            <div className="flex items-center gap-2 mt-1 text-xs text-zinc-500 font-medium">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              <span>Available for 1-on-1 Consultations</span>
+            </div>
           </div>
 
           {/* Col 2: Navigation Links */}
-          <div className="md:col-span-4 grid grid-cols-2 gap-4">
-            <div>
-              <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-3">
-                Navigation
-              </h4>
-              <ul className="space-y-2 text-sm text-zinc-600">
-                <li>
-                  <a href="#" className="hover:text-blue-600 transition-colors">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="#services" className="hover:text-blue-600 transition-colors">
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#benefits" className="hover:text-blue-600 transition-colors">
-                    Benefits
-                  </a>
-                </li>
-                <li>
-                  <a href="#about" className="hover:text-blue-600 transition-colors">
-                    About Me
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-3">
-                Services
-              </h4>
-              <ul className="space-y-2 text-sm text-zinc-600">
-                <li className="hover:text-zinc-900">Professional CV</li>
-                <li className="hover:text-zinc-900">ATS Optimization</li>
-                <li className="hover:text-zinc-900">Cover Letters</li>
-                <li className="hover:text-zinc-900">LinkedIn Revamp</li>
-              </ul>
-            </div>
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-3">
+              Navigation
+            </h4>
+            <ul className="space-y-2.5 text-sm text-zinc-600">
+              <li>
+                <a
+                  href="#top"
+                  onClick={(e) => scrollToSection(e, "top")}
+                  className="hover:text-blue-600 transition-colors inline-block cursor-pointer"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  onClick={(e) => scrollToSection(e, "services")}
+                  className="hover:text-blue-600 transition-colors inline-block cursor-pointer"
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#journey"
+                  onClick={(e) => scrollToSection(e, "journey")}
+                  className="hover:text-blue-600 transition-colors inline-block cursor-pointer"
+                >
+                  How It Works
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#benefits"
+                  onClick={(e) => scrollToSection(e, "benefits")}
+                  className="hover:text-blue-600 transition-colors inline-block cursor-pointer"
+                >
+                  Why Choose Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  onClick={(e) => scrollToSection(e, "about")}
+                  className="hover:text-blue-600 transition-colors inline-block cursor-pointer"
+                >
+                  About Mohammed
+                </a>
+              </li>
+            </ul>
           </div>
 
-          {/* Col 3: Direct Connect */}
-          <div className="md:col-span-3 flex flex-col">
+          {/* Col 3: Services Links */}
+          <div className="md:col-span-2">
             <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-3">
-              Direct Contact
+              Services
             </h4>
-            <p className="text-xs text-zinc-500 mb-4 leading-relaxed">
-              Have questions about your resume or want a direct consultation? Reach out anytime via LinkedIn.
-            </p>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-blue-200 hover:border-blue-400 bg-white hover:bg-blue-50/50 shadow-xs transition-colors text-zinc-800 text-sm font-semibold w-fit"
+            <ul className="space-y-2.5 text-sm text-zinc-600">
+              <li>
+                <Link
+                  href="/services/professional-resume"
+                  className="hover:text-blue-600 transition-colors inline-block"
+                >
+                  Professional Resume
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/ats-friendly-resume"
+                  className="hover:text-blue-600 transition-colors inline-block"
+                >
+                  ATS Friendly Resume
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/cover-letter"
+                  className="hover:text-blue-600 transition-colors inline-block"
+                >
+                  Cover Letter & Strategy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4: Quick Action / Back to Top */}
+          <div className="md:col-span-3 flex flex-col justify-between">
+            <div>
+              <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-3">
+                Quick Actions
+              </h4>
+              <p className="text-xs text-zinc-500 leading-relaxed mb-4">
+                Personalized resume crafting for applicants across the UAE, Middle East, and globally.
+              </p>
+            </div>
+
+            <button
+              onClick={(e) => scrollToSection(e, "top")}
+              className="inline-flex items-center justify-between px-4 py-2.5 rounded-xl border border-zinc-200 bg-white hover:bg-zinc-50 hover:border-zinc-300 text-zinc-700 hover:text-zinc-900 text-xs sm:text-sm font-semibold transition-all shadow-2xs group w-fit cursor-pointer"
             >
-              <div className="w-6 h-6 rounded bg-[#0A66C2] flex items-center justify-center text-white font-bold text-xs">
-                in
-              </div>
-              <span>DM on LinkedIn</span>
-            </a>
+              <span>Back to Top</span>
+              <svg
+                className="w-4 h-4 ml-2 text-zinc-400 group-hover:text-zinc-900 group-hover:-translate-y-0.5 transition-all"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M5 10l7-7m0 0l7 7m-7-7v18"
+                />
+              </svg>
+            </button>
           </div>
         </div>
 

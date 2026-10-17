@@ -7,29 +7,53 @@ import { motion } from "motion/react";
 export default function AboutSection() {
   const highlights = [
     {
-      title: "25+ Years of IT Experience",
-      desc: "Deep understanding of professional skills, career growth, and what makes a resume stand out.",
+      title: "25+ Years Corporate & IT Background",
+      desc: "Deep familiarity with modern job roles, required technical competencies, and career progression paths across industries.",
+      iconBg: "bg-blue-50 text-blue-600 border-blue-200/80",
+      svg: (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
     },
     {
-      title: "Insider Hiring Board Perspective",
-      desc: "Having recruited and evaluated candidates firsthand, I know what employers look for in a strong resume.",
+      title: "Direct Hiring Experience",
+      desc: "Having reviewed resumes and interviewed candidates firsthand, I know exactly what hiring managers look for in the first 10 seconds.",
+      iconBg: "bg-indigo-50 text-indigo-600 border-indigo-200/80",
+      svg: (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
     },
     {
-      title: "Bespoke & Uniquely Handcrafted",
-      desc: "Every resume is tailored to highlight your career journey, achievements, and professional strengths.",
+      title: "Tailored to Your Target Roles",
+      desc: "No copy-pasted templates or automated generic text. Every section is written around your specific career achievements.",
+      iconBg: "bg-sky-50 text-sky-600 border-sky-200/80",
+      svg: (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>
+      ),
     },
     {
-      title: "Direct 1-on-1 Strategic Collaboration",
-      desc: "Work directly with me to refine your resume and accurately showcase your experience and value.",
+      title: "1-on-1 Dedicated Guidance",
+      desc: "You collaborate directly with me through drafts and revisions until you feel 100% confident in the final document.",
+      iconBg: "bg-emerald-50 text-emerald-600 border-emerald-200/80",
+      svg: (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      ),
     },
   ];
 
   return (
     <section id="about" className="w-full max-w-6xl mx-auto px-6 py-20 md:py-28 relative z-10">
-      <div className="bg-gradient-to-b from-zinc-50/80 to-white border border-zinc-200/90 rounded-[32px] p-8 sm:p-12 md:p-16 shadow-[0_10px_35px_-8px_rgba(0,0,0,0.06)] relative overflow-hidden">
-        {/* Subtle background glow */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-red-100/30 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
+      <div className="bg-gradient-to-br from-white via-blue-50/20 to-white border border-blue-100/80 rounded-[32px] p-8 sm:p-12 md:p-16 shadow-[0_12px_45px_-10px_rgba(37,99,235,0.07)] relative overflow-hidden">
+        {/* Soft atmospheric background glow */}
+        <div className="absolute -top-24 -right-24 w-80 h-80 bg-blue-100/50 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-indigo-100/40 rounded-full blur-3xl pointer-events-none" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
           {/* Left Column: Image & Experience Badges */}
@@ -42,37 +66,37 @@ export default function AboutSection() {
           >
             <div className="relative w-full max-w-sm">
               {/* Main Photo Frame */}
-              <div className="relative aspect-[4/5] w-full rounded-[28px] overflow-hidden border-2 border-white shadow-2xl bg-zinc-100 ring-1 ring-zinc-200/70">
+              <div className="relative aspect-[4/5] w-full rounded-[28px] overflow-hidden border-2 border-white shadow-xl ring-1 ring-blue-100/80 bg-zinc-100">
                 <Image
                   src="/aeraf-portrait.png"
-                  alt="Mohammed Aeraf - Resume Strategist & Corporate Veteran"
+                  alt="Mohammed Aeraf - 25+ Years IT Professional & Career Consultant"
                   fill
-                  className="object-cover object-top hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-top hover:scale-102 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 400px"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/85 via-zinc-950/20 to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 text-white">
                   <p className="font-bold text-lg leading-tight">Mohammed Aeraf</p>
-                  <p className="text-zinc-300 text-xs font-medium mt-0.5">
-                    Senior Corporate Veteran & Executive Resume Strategist
+                  <p className="text-blue-200 text-xs font-medium mt-1">
+                    25+ Years IT Veteran & Resume Consultant
                   </p>
                 </div>
               </div>
 
-              {/* Floating Pill Badge: 25+ Years IT Exp */}
+              {/* Floating Badge: 25+ Years IT Exp */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.85, y: 15 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
-                className="absolute -top-4 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md border border-zinc-200/80 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3"
+                className="absolute -top-4 -right-3 sm:-right-5 bg-white/95 backdrop-blur-md border border-blue-100 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3"
               >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-black text-sm shadow-sm flex-shrink-0">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white flex items-center justify-center font-black text-sm shadow-md shadow-blue-500/25 flex-shrink-0">
                   25+
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-500 font-semibold uppercase tracking-wider">
+                  <p className="text-[11px] text-zinc-500 font-semibold uppercase tracking-wider">
                     Experience
                   </p>
                   <p className="text-sm font-bold text-zinc-900 leading-none mt-0.5">
@@ -80,8 +104,6 @@ export default function AboutSection() {
                   </p>
                 </div>
               </motion.div>
-
-
             </div>
           </motion.div>
 
@@ -93,34 +115,32 @@ export default function AboutSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-7 flex flex-col justify-center"
           >
-            {/* Tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900 text-white text-xs sm:text-sm font-medium w-fit mb-4 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              About Me
-            </div>
-
-            {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 leading-tight">
-              25+ Years in IT,{" "}
-              <span className="text-blue-600">Now Powering Your Career Growth</span>
+            {/* Heading with vibrant gradient accent */}
+            <h2 className="text-3xl sm:text-4xl md:text-[38px] font-extrabold tracking-tight text-zinc-900 leading-tight">
+              25+ Years in Corporate IT,{" "}
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent block sm:inline">
+                Positioning You for the Right Roles.
+              </span>
             </h2>
 
             {/* Intro paragraph */}
             <p className="text-zinc-600 text-base sm:text-lg leading-relaxed mt-4">
-              A great resume doesn&apos;t just list experience—it communicates your value and gets you noticed.
+              Most resumes get overlooked because they read like duty lists instead of achievements. I help you translate your work history into clear, measurable impact.
             </p>
 
-            {/* Points from wireframe */}
-            <div className="mt-7 space-y-4">
+            {/* Colorful & Crisp Highlight Points */}
+            <div className="mt-8 space-y-4 sm:space-y-5">
               {highlights.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3.5">
-                  <div className="w-6 h-6 rounded-full bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">
-                    ✓
+                <div key={idx} className="flex items-start gap-3.5 group">
+                  <div
+                    className={`w-7 h-7 rounded-xl ${item.iconBg} border flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5 shadow-2xs group-hover:scale-108 transition-transform duration-200`}
+                  >
+                    {item.svg}
                   </div>
                   <div>
-                    <h4 className="text-sm sm:text-base font-bold text-zinc-900">
+                    <h3 className="text-sm sm:text-base font-bold text-zinc-900 group-hover:text-blue-600 transition-colors">
                       {item.title}
-                    </h4>
+                    </h3>
                     <p className="text-xs sm:text-sm text-zinc-600 mt-0.5 leading-relaxed">
                       {item.desc}
                     </p>
@@ -135,15 +155,16 @@ export default function AboutSection() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transition-all"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white font-semibold text-sm sm:text-base shadow-md shadow-blue-600/15 hover:shadow-lg hover:shadow-blue-600/25 transition-all group/btn"
               >
                 <div className="w-5 h-5 rounded bg-white text-[#0A66C2] flex items-center justify-center font-bold text-xs">
                   in
                 </div>
                 Connect With Me on LinkedIn
               </a>
-              <span className="text-xs sm:text-sm text-zinc-500 font-medium">
-                ⚡ Direct 1-on-1 consultations
+              <span className="text-xs sm:text-sm text-zinc-600 font-medium flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                Direct 1-on-1 collaboration
               </span>
             </div>
           </motion.div>

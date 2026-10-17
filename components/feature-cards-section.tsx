@@ -82,19 +82,16 @@ export default function FeatureCardsSection() {
     <section
       id="services"
       className="relative z-10 py-16 sm:py-24 overflow-hidden"
-      style={{ borderTop: "1px solid var(--border-subtle)" }}
     >
       <div className="max-w-screen-xl mx-auto px-6 sm:px-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex w-full flex-col items-center justify-start gap-3.5 overflow-hidden mb-12 sm:mb-16"
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex w-full flex-col items-center justify-start gap-3.5 overflow-hidden mb-8 sm:mb-12"
         >
-
-
           <h2
             className="flex w-full max-w-2xl justify-center text-center font-extrabold tracking-tight whitespace-nowrap text-zinc-900"
             style={{
@@ -106,106 +103,95 @@ export default function FeatureCardsSection() {
           </h2>
         </motion.div>
 
-        {/* Dynamic Image Display with Link to Detail Page */}
-        <div
-          className="relative z-5 my-2 sm:my-6 flex w-full flex-col items-center justify-center gap-2 group/preview"
+        {/* Dynamic Floating Image Display with Entrance Animation & Continuous Levitation */}
+        <motion.div
+          initial={{ opacity: 0, y: 36, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-5 my-4 sm:my-10 flex w-full flex-col items-center justify-center group/preview"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <Link
-            href={`/services/${services[activeCard].slug}`}
-            className="flex h-[320px] sm:h-[500px] w-full max-w-5xl flex-col items-center justify-center overflow-hidden transition-all duration-500 relative cursor-pointer"
-            title="Click to view full service details"
-          >
-            <div className="flex flex-1 items-center justify-center self-stretch w-full">
-              <div className="flex h-full w-full items-center justify-center">
-                <div className="relative h-full w-full overflow-hidden flex items-center justify-center">
+          <div className="relative w-full max-w-4xl lg:max-w-5xl aspect-[16/9] flex items-center justify-center">
+            {/* Floating Image Wrapper with physical levitation motion */}
+            <motion.div
+              animate={{
+                y: [0, -8, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="w-full h-full"
+            >
+              <Link
+                href={`/services/${services[activeCard].slug}`}
+                className="relative w-full h-full flex items-center justify-center transition-all duration-300 ease-out cursor-pointer hover:scale-[1.02] block group"
+                title="Click to view full service details"
+              >
+                {/* Floating Image with rounded corners & signature soft float shadow */}
+                <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0px_10px_25px_0px_#D3D3D3] hover:shadow-[0px_18px_35px_0px_#C4C4C4] bg-zinc-950 transition-all duration-300">
                   {services.map((item, idx) => (
                     <div
                       key={item.slug}
-                      className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${activeCard === idx
+                      className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                        activeCard === idx
                           ? "scale-100 opacity-100 z-10"
                           : "scale-105 opacity-0 z-0 pointer-events-none"
-                        }`}
+                      }`}
                     >
                       <Image
                         src={item.imageSrc}
                         alt={item.alt}
                         fill
-                        className="object-contain rounded-2xl border shadow-2xl bg-zinc-950/5"
-                        style={{ borderColor: "var(--border-medium)" }}
-                        sizes="(max-width: 1024px) 100vw, 1024px"
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 1200px"
                         priority={idx === 0}
                       />
                     </div>
                   ))}
                 </div>
-              </div>
-            </div>
+              </Link>
+            </motion.div>
+          </div>
+        </motion.div>
 
-            {/* Hover floating hint */}
-            <div className="absolute bottom-4 right-4 bg-zinc-950/80 backdrop-blur-md text-white text-xs font-semibold px-4 py-2 rounded-xl opacity-0 group-hover/preview:opacity-100 transition-opacity flex items-center gap-2 shadow-lg z-20">
-              <span>View full service & templates</span>
-              <span>→</span>
-            </div>
-          </Link>
-        </div>
-
-        {/* Cards Row with Diagonal Accents - Solid White Background */}
-        <div
-          className="mt-6 sm:mt-14 flex items-start justify-center self-stretch bg-white border border-zinc-200/90 rounded-2xl sm:rounded-3xl shadow-sm overflow-hidden"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
+        {/* 3 Standalone Service Buttons / Cards - Timer only pauses on big image hover */}
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.65, delay: 0.2, ease: "easeOut" }}
+          className="mt-6 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 w-full max-w-4xl lg:max-w-5xl mx-auto"
         >
-          <div className="relative w-4 self-stretch overflow-hidden sm:w-6 md:w-8 lg:w-12 bg-white">
-            <div className="absolute -top-30 -left-4 flex w-40 flex-col items-start justify-start">
-              {Array.from({ length: 50 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="h-4 origin-top-left -rotate-45 self-stretch outline-[0.5px] outline-offset-[-0.25px]"
-                  style={{ outlineColor: "var(--border-medium)" }}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-1 flex-col items-stretch justify-center gap-0 px-0 md:flex-row bg-white">
-            {services.map((card, idx) => (
-              <FeatureCard
-                key={card.slug}
-                title={card.title}
-                slug={card.slug}
-                isActive={activeCard === idx}
-                progress={activeCard === idx ? progress : 0}
-                onClick={() => handleCardClick(idx)}
-              />
-            ))}
-          </div>
-
-          <div className="relative w-4 self-stretch overflow-hidden sm:w-6 md:w-8 lg:w-12 bg-white">
-            <div className="absolute -top-30 -left-4 flex w-40 flex-col items-start justify-start">
-              {Array.from({ length: 50 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="h-4 origin-top-left -rotate-45 self-stretch outline-[0.5px] outline-offset-[-0.25px]"
-                  style={{ outlineColor: "var(--border-medium)" }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+          {services.map((card, idx) => (
+            <FeatureCard
+              key={card.slug}
+              index={idx}
+              title={card.title}
+              slug={card.slug}
+              isActive={activeCard === idx}
+              progress={activeCard === idx ? progress : 0}
+              onClick={() => handleCardClick(idx)}
+            />
+          ))}
+        </motion.div>
       </div>
     </section>
   );
 }
 
 function FeatureCard({
+  index,
   title,
   slug,
   isActive,
   progress,
   onClick,
 }: {
+  index: number;
   title: string;
   slug: string;
   isActive: boolean;
@@ -221,58 +207,79 @@ function FeatureCard({
           onClick();
         }
       }}
-      className={`group relative flex w-full cursor-pointer flex-col items-start justify-between gap-5 self-stretch overflow-hidden px-6 py-6 md:flex-1 select-none bg-white transition-all duration-300 ${isActive
-          ? "border-b-2 md:border-b-0 md:border-r last:border-r-0 border-zinc-900 bg-white"
-          : "border-b md:border-b-0 md:border-r last:border-r-0 border-zinc-200/80 bg-white hover:bg-zinc-50/90"
-        }`}
+      className={`group relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl cursor-pointer select-none transition-all duration-300 text-left overflow-hidden bg-white ${
+        isActive
+          ? "border-2 border-zinc-900 shadow-[0_10px_30px_-6px_rgba(0,0,0,0.12)] -translate-y-1"
+          : "border border-zinc-200/90 hover:border-zinc-300 hover:shadow-md hover:-translate-y-0.5 shadow-2xs"
+      }`}
       onClick={onClick}
     >
-      {/* Active progress bar */}
+      {/* Active progress bar indicator across the top of the card */}
       {isActive && (
-        <div className="absolute top-0 left-0 h-[3px] w-full bg-zinc-100">
+        <div className="absolute top-0 left-0 right-0 h-[3.5px] bg-zinc-100 overflow-hidden">
           <div
-            className="h-full transition-all duration-100 ease-linear bg-zinc-900"
-            style={{
-              width: `${progress}%`,
-            }}
+            className="h-full bg-zinc-900 transition-all duration-100 ease-linear rounded-r-full"
+            style={{ width: `${progress}%` }}
           />
         </div>
       )}
 
-      {/* Title */}
-      <div className="w-full flex items-start justify-start">
-        <span
-          className={`text-base sm:text-lg font-bold tracking-tight leading-snug transition-colors duration-200 ${isActive
-              ? "text-zinc-950"
-              : "text-zinc-800 group-hover:text-blue-600"
+      {/* Card Header with Number and Title */}
+      <div className="w-full flex flex-col gap-2.5">
+        <div className="flex items-center justify-between w-full">
+          <span
+            className={`text-xs font-bold tracking-wider font-mono transition-colors ${
+              isActive ? "text-zinc-900" : "text-zinc-400 group-hover:text-zinc-600"
             }`}
+          >
+            0{index + 1}
+          </span>
+        </div>
+
+        <h3
+          className={`text-base sm:text-lg font-bold tracking-tight leading-snug transition-colors duration-200 ${
+            isActive ? "text-zinc-950" : "text-zinc-800 group-hover:text-blue-600"
+          }`}
         >
           {title}
-        </span>
+        </h3>
       </div>
 
-      {/* View Service Button */}
-      <div className="w-full pt-1 flex items-center justify-between">
+      {/* Enhanced View Service Action Button */}
+      <div className="w-full pt-2">
         <Link
           href={`/services/${slug}`}
           onClick={(e) => {
-            // Allow navigation to proceed without blocking
             e.stopPropagation();
           }}
-          className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 shadow-2xs group/btn bg-white border ${isActive
-              ? "border-zinc-300 hover:border-zinc-900 text-zinc-900 hover:bg-zinc-50 hover:shadow-xs"
-              : "border-zinc-200 hover:border-zinc-400 text-zinc-700 hover:text-zinc-900 hover:bg-zinc-50 hover:shadow-xs"
-            }`}
+          className={`group/btn inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
+            isActive
+              ? "bg-zinc-900 text-white hover:bg-zinc-800 shadow-sm"
+              : "bg-zinc-50 hover:bg-zinc-100 text-zinc-700 hover:text-zinc-950 border border-zinc-200/80 hover:border-zinc-300"
+          }`}
         >
           <span>View Service</span>
-          <svg
-            className="w-3.5 h-3.5 text-zinc-600 group-hover/btn:text-zinc-900 group-hover/btn:translate-x-1 transition-transform duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+          <span
+            className={`w-6 h-6 rounded-lg flex items-center justify-center transition-transform duration-200 group-hover/btn:translate-x-1 ${
+              isActive
+                ? "bg-zinc-800 text-zinc-200"
+                : "bg-white text-zinc-600 border border-zinc-200/80 shadow-2xs"
+            }`}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
+            <svg
+              className="w-3.5 h-3.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.5"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </span>
         </Link>
       </div>
     </div>

@@ -391,7 +391,7 @@ export default function KineticGrid({
   return (
     <div
       className={cn(
-        "relative w-full min-h-screen overflow-hidden",
+        "relative w-full min-h-screen overflow-x-clip",
         globalColor === "monochrome"
           ? "bg-[#000000]"
           : globalColor === "default"
