@@ -42,23 +42,23 @@ const testimonials: Testimonial[] = [
 
 export default function WrittenTestimonials() {
   return (
-    <section id="testimonials" className="w-full max-w-6xl mx-auto px-6 py-16 md:py-24 relative z-10">
+    <section id="testimonials" className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24 relative z-10">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="text-center max-w-2xl mx-auto mb-12 md:mb-16"
+        className="text-center max-w-2xl mx-auto mb-10 md:mb-16"
       >
 
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-tight">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-tight">
           Hear It From Our Candidates
         </h2>
       </motion.div>
 
       {/* Clean & Simple Testimonials Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
         {testimonials.map((item, index) => (
           <motion.div
             key={item.name}
@@ -70,7 +70,7 @@ export default function WrittenTestimonials() {
               delay: index * 0.12,
               ease: "easeOut",
             }}
-            className="bg-white rounded-3xl p-7 border border-zinc-200/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_28px_-4px_rgba(0,0,0,0.08)] hover:border-zinc-300 transition-all duration-300 flex flex-col justify-between group"
+            className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-zinc-200/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_28px_-4px_rgba(0,0,0,0.08)] hover:border-zinc-300 transition-all duration-300 flex flex-col justify-between group"
           >
             <div>
               {/* Star Rating */}

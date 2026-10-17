@@ -75,9 +75,9 @@ const Card = ({
         delay: (index % 2) * 0.2,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={`relative w-full max-w-[320px] md:max-w-none md:w-[290px] mx-auto transition-transform duration-300 hover:z-30 hover:scale-105 ${rotate} ${className}`}
+      className={`relative w-full max-w-[310px] md:max-w-none md:w-[290px] mx-auto transition-transform duration-300 hover:z-30 hover:scale-105 ${rotate} ${className}`}
     >
-      <div className="bg-white dark:bg-neutral-900 p-2.5 rounded-[26px] shadow-[0px_10px_25px_0px_#D3D3D3] dark:shadow-none border border-neutral-100 dark:border-neutral-800">
+      <div className="bg-white dark:bg-neutral-900 p-2 sm:p-2.5 rounded-[22px] sm:rounded-[26px] shadow-[0px_10px_25px_0px_#D3D3D3] dark:shadow-none border border-neutral-100 dark:border-neutral-800">
         <m.div
           initial={{ opacity: 0, scale: 0.6, y: -12 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -88,10 +88,10 @@ const Card = ({
             ease: "easeOut",
           }}
         >
-          <Pin className={`w-8 h-8 ${textColor} z-20 mb-3 mx-auto drop-shadow-xs`} />
+          <Pin className={`w-7 h-7 sm:w-8 sm:h-8 ${textColor} z-20 mb-2 sm:mb-3 mx-auto drop-shadow-xs`} />
         </m.div>
         <div
-          className={`${bgColor} border ${borderColor} rounded-[18px] p-4 h-full flex flex-col relative overflow-hidden`}
+          className={`${bgColor} border ${borderColor} rounded-[16px] sm:rounded-[18px] p-3.5 sm:p-4 h-full flex flex-col relative overflow-hidden`}
         >
           {/* 3D Graphic Preview Card */}
           {imageSrc && (
@@ -104,7 +104,7 @@ const Card = ({
                 delay: 0.15 + (index % 2) * 0.1,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="relative w-full h-32 sm:h-36 rounded-xl overflow-hidden mb-3.5 bg-white/80 dark:bg-neutral-800/80 shadow-xs border border-white/60 dark:border-white/5 flex items-center justify-center p-2 group"
+              className="relative w-full h-28 sm:h-36 rounded-xl overflow-hidden mb-3 bg-white/80 dark:bg-neutral-800/80 shadow-xs border border-white/60 dark:border-white/5 flex items-center justify-center p-2 group"
             >
               <Image
                 src={imageSrc}
@@ -117,17 +117,17 @@ const Card = ({
           )}
 
           <span
-            className={`${textColor} text-3xl font-handwriting mb-1.5`}
+            className={`${textColor} text-2xl sm:text-3xl font-handwriting mb-1`}
             style={{
               fontFamily: '"Comic Sans MS", "Chalkboard SE", sans-serif',
             }}
           >
             {number}
           </span>
-          <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-100 leading-tight mb-2">
+          <h3 className="text-lg sm:text-xl font-bold text-neutral-800 dark:text-neutral-100 leading-tight mb-1.5">
             {title}
           </h3>
-          <p className="text-neutral-600 dark:text-neutral-400 text-sm/5 tracking-tight font-medium">
+          <p className="text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm/5 tracking-tight font-medium">
             {description}
           </p>
         </div>
@@ -160,17 +160,17 @@ export interface HowItWorksProps {
 }
 
 const DEFAULT_CARD_POSITIONS: StepPosition[] = [
-  { className: "md:absolute md:top-0 md:left-[12%]", rotate: "rotate-6" },
+  { className: "md:absolute md:top-0 md:left-[12%]", rotate: "rotate-0 md:rotate-6" },
   {
     className: "md:absolute md:top-[180px] md:right-[12%]",
-    rotate: "-rotate-6",
+    rotate: "rotate-0 md:-rotate-6",
   },
-  { className: "md:absolute md:top-[500px] md:left-[12%]", rotate: "rotate-6" },
+  { className: "md:absolute md:top-[500px] md:left-[12%]", rotate: "rotate-0 md:rotate-6" },
   {
     className: "md:absolute md:top-[700px] md:right-[12%]",
-    rotate: "-rotate-6",
+    rotate: "rotate-0 md:-rotate-6",
   },
-  { className: "md:absolute md:top-[1020px] md:left-[12%]", rotate: "rotate-6" },
+  { className: "md:absolute md:top-[1020px] md:left-[12%]", rotate: "rotate-0 md:rotate-6" },
 ];
 
 export default function HowItWorks({

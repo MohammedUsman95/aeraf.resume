@@ -39,9 +39,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   return (
     <KineticGrid className="bg-white text-zinc-900 font-sans min-h-screen">
       {/* Top Navigation Bar */}
-      <header className="w-full px-6 py-5 md:px-12 flex items-center justify-between border-b border-zinc-200/50 bg-white/70 backdrop-blur-md sticky top-0 z-30">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 rounded-full overflow-hidden border border-zinc-200 bg-white flex-shrink-0 shadow-xs">
+      <header className="w-full px-4 sm:px-6 md:px-12 py-3.5 sm:py-5 flex items-center justify-between border-b border-zinc-200/50 bg-white/80 backdrop-blur-md sticky top-0 z-30">
+        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group">
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-zinc-200 bg-white flex-shrink-0 shadow-xs">
             <Image
               src="/aeraf.jpeg"
               alt="Mohammed Aeraf"
@@ -52,14 +52,14 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             />
           </div>
           <div className="relative">
-            <span className="font-bold text-xl tracking-tight text-zinc-900 group-hover:text-blue-600 transition-colors">
+            <span className="font-bold text-lg sm:text-xl tracking-tight text-zinc-900 group-hover:text-blue-600 transition-colors">
               aeraf.resume
             </span>
             <div className="h-[2px] w-full bg-red-500 rounded-full mt-0.5" />
           </div>
         </Link>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5 sm:gap-3">
           <Link
             href="/#services"
             className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-zinc-600 hover:text-zinc-900 px-3.5 py-2 rounded-xl hover:bg-zinc-100 transition-colors"
@@ -70,18 +70,18 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white text-sm font-semibold shadow-xs transition-colors"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors"
           >
             <div className="w-5 h-5 rounded bg-white text-[#0A66C2] flex items-center justify-center font-bold text-xs">
               in
             </div>
-            <span>DM on LinkedIn</span>
+            <span><span className="hidden sm:inline">DM on </span>LinkedIn</span>
           </a>
         </div>
       </header>
 
       {/* Main Service Content */}
-      <main className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-xs font-medium text-zinc-500 mb-6">
           <Link href="/" className="hover:text-zinc-900 transition-colors">
@@ -92,35 +92,35 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             Services
           </Link>
           <span>/</span>
-          <span className="text-zinc-900 font-semibold">{service.title}</span>
+          <span className="text-zinc-900 font-semibold truncate max-w-[200px] sm:max-w-none">{service.title}</span>
         </div>
 
         {/* Hero Section of Service */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center pb-16 md:pb-20 border-b border-zinc-200">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pb-12 sm:pb-16 md:pb-20 border-b border-zinc-200">
           <div className="lg:col-span-7 flex flex-col items-start">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4">
               <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
               {service.badge}
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 leading-[1.15]">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-zinc-900 leading-[1.15]">
               {service.title}
             </h1>
 
-            <p className="text-base sm:text-xl font-medium text-zinc-600 mt-4 leading-relaxed">
+            <p className="text-base sm:text-xl font-medium text-zinc-600 mt-3 sm:mt-4 leading-relaxed">
               {service.tagline}
             </p>
 
-            <p className="text-sm sm:text-base text-zinc-500 mt-3 leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-500 mt-2 sm:mt-3 leading-relaxed">
               {service.overview}
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-7 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-bold text-sm sm:text-base shadow-md hover:shadow-xl transition-all"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-bold text-sm sm:text-base shadow-md hover:shadow-xl transition-all"
               >
                 <span>Request This Service</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -130,14 +130,14 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
               <a
                 href="#templates"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-zinc-300 hover:border-zinc-400 bg-white hover:bg-zinc-50 text-zinc-800 font-semibold text-sm transition-colors shadow-2xs"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-zinc-300 hover:border-zinc-400 bg-white hover:bg-zinc-50 text-zinc-800 font-semibold text-sm transition-colors shadow-2xs"
               >
                 <span>View Templates</span>
                 <span className="text-zinc-400">↓</span>
               </a>
             </div>
 
-            <div className="mt-6 flex items-center gap-5 text-xs text-zinc-500 font-medium">
+            <div className="mt-6 flex flex-wrap items-center gap-3 sm:gap-5 text-xs text-zinc-500 font-medium">
               <span className="flex items-center gap-1.5">
                 <span className="text-emerald-600">✓</span> 48–72h Turnaround
               </span>
@@ -295,18 +295,18 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </section>
 
         {/* What's Included */}
-        <section className="py-16 md:py-20 border-b border-zinc-200">
-          <div className="bg-zinc-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
+        <section className="py-12 sm:py-16 md:py-20 border-b border-zinc-200">
+          <div className="bg-zinc-900 text-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 shadow-xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-5">
                 <span className="text-xs uppercase font-bold tracking-widest text-blue-400 mb-2 block">
                   Comprehensive Package
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+                <h2 className="text-xl sm:text-3xl font-extrabold tracking-tight">
                   Everything Included in This Service
                 </h2>
-                <p className="text-zinc-400 text-sm mt-3 leading-relaxed">
+                <p className="text-zinc-400 text-xs sm:text-sm mt-2.5 sm:mt-3 leading-relaxed">
                   Every package includes direct 1-on-1 collaboration with Mohammed Aeraf until your resume exceeds industry benchmarks.
                 </p>
                 <div className="mt-6">
@@ -314,7 +314,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white font-bold text-sm shadow-md transition-all"
+                    className="inline-flex items-center justify-center w-full sm:w-auto gap-2.5 px-6 py-3.5 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white font-bold text-sm shadow-md transition-all"
                   >
                     <div className="w-5 h-5 rounded bg-white text-[#0A66C2] flex items-center justify-center font-bold text-xs">
                       in

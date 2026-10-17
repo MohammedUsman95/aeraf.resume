@@ -78,26 +78,26 @@ const benefitBoxes: BenefitBox[] = [
 
 export default function BenefitsSection() {
   return (
-    <section id="benefits" className="w-full max-w-6xl mx-auto px-6 py-20 md:py-28 relative z-10">
+    <section id="benefits" className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20 md:py-28 relative z-10">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-center max-w-3xl mx-auto mb-14 md:mb-16"
+        className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 md:mb-16"
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-tight">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-tight">
           Why Choose{" "}
           <span className="relative inline-block">
             aeraf.resume
-            <span className="absolute bottom-1.5 left-0 w-full h-[3px] bg-red-500 rounded-full" />
+            <span className="absolute bottom-1 sm:bottom-1.5 left-0 w-full h-[2.5px] sm:h-[3px] bg-red-500 rounded-full" />
           </span>
         </h2>
       </motion.div>
 
-      {/* 4 Feature Boxes Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* 4 Feature Boxes Grid - 2x2 on mobile, 4 in a row on desktop */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         {benefitBoxes.map((box, index) => (
           <motion.div
             key={box.id}
@@ -109,12 +109,12 @@ export default function BenefitsSection() {
               delay: index * 0.1,
               ease: "easeOut",
             }}
-            className="group relative bg-white rounded-3xl p-8 sm:p-9 border border-zinc-200/80 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_16px_36px_-6px_rgba(0,0,0,0.1)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center justify-center text-center gap-5 min-h-[190px]"
+            className="group relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-zinc-200/80 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_16px_36px_-6px_rgba(0,0,0,0.1)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center justify-center text-center gap-3 sm:gap-5 min-h-[145px] sm:min-h-[190px]"
           >
             {/* Top Icon Badge with distinct light blue background */}
-            <div className="relative w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-[#e8f2fe] border border-blue-200/70 shadow-xs flex items-center justify-center group-hover:scale-110 group-hover:bg-[#dbeafe] transition-all duration-300 flex-shrink-0">
+            <div className="relative w-12 h-12 sm:w-18 sm:h-18 rounded-2xl sm:rounded-full bg-[#e8f2fe] border border-blue-200/70 shadow-xs flex items-center justify-center group-hover:scale-110 group-hover:bg-[#dbeafe] transition-all duration-300 flex-shrink-0">
               {box.imageSrc ? (
-                <div className="relative w-9 h-9 sm:w-10 sm:h-10">
+                <div className="relative w-7 h-7 sm:w-10 sm:h-10">
                   <Image
                     src={box.imageSrc}
                     alt={box.title}
@@ -124,12 +124,14 @@ export default function BenefitsSection() {
                   />
                 </div>
               ) : (
-                box.svgIcon
+                <div className="[&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-8 sm:[&>svg]:h-8">
+                  {box.svgIcon}
+                </div>
               )}
             </div>
 
             {/* Box Title */}
-            <h3 className="text-base sm:text-lg font-bold text-zinc-900 leading-snug tracking-tight max-w-[180px] group-hover:text-blue-600 transition-colors">
+            <h3 className="text-xs sm:text-base font-bold text-zinc-900 leading-snug tracking-tight max-w-[150px] sm:max-w-[180px] group-hover:text-blue-600 transition-colors">
               {box.title}
             </h3>
           </motion.div>

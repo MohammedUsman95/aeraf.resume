@@ -37,11 +37,11 @@ export default function Home() {
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="fixed top-0 left-0 right-0 z-50 w-full px-6 py-3.5 md:px-12 flex items-center justify-between border-b border-zinc-200/70 bg-white/90 backdrop-blur-md shadow-2xs"
+        className="fixed top-0 left-0 right-0 z-50 w-full px-4 sm:px-8 md:px-12 py-2.5 sm:py-3.5 flex items-center justify-between border-b border-zinc-200/70 bg-white/90 backdrop-blur-md shadow-2xs"
       >
         {/* Top Left: Small rounded image + aeraf.resume */}
-        <a href="#home" className="flex items-center gap-3 group cursor-pointer">
-          <div className="relative w-11 h-11 rounded-full overflow-hidden border border-zinc-200 bg-white flex-shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+        <a href="#home" className="flex items-center gap-2 sm:gap-3 group cursor-pointer">
+          <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-zinc-200 bg-white flex-shrink-0 shadow-xs group-hover:scale-105 transition-transform">
             <Image
               src="/aeraf.jpeg"
               alt="Mohammed Aeraf"
@@ -52,7 +52,7 @@ export default function Home() {
             />
           </div>
           <div className="relative">
-            <span className="font-bold text-xl sm:text-2xl tracking-tight text-zinc-900">
+            <span className="font-bold text-lg sm:text-xl md:text-2xl tracking-tight text-zinc-900">
               aeraf.resume
             </span>
             {/* Red accent line as shown in wireframe */}
@@ -60,8 +60,8 @@ export default function Home() {
           </div>
         </a>
 
-        {/* Center: Limelight Spotlight Navigation Bar connecting all sections */}
-        <div className="hidden sm:flex items-center justify-center">
+        {/* Center: Limelight Spotlight Navigation Bar connecting all sections (Desktop & Tablet) */}
+        <div className="hidden md:flex items-center justify-center">
           <LimelightNav />
         </div>
 
@@ -70,20 +70,25 @@ export default function Home() {
           href="https://linkedin.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-xl border border-blue-200 hover:border-blue-400 bg-white hover:bg-blue-50/50 shadow-xs transition-colors group text-zinc-800"
+          className="flex items-center gap-1.5 sm:gap-2.5 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl border border-blue-200 hover:border-blue-400 bg-white hover:bg-blue-50/50 shadow-xs transition-colors group text-zinc-800"
         >
           {/* LinkedIn Icon */}
-          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded bg-[#0A66C2] flex items-center justify-center text-white font-bold text-xs sm:text-sm">
+          <div className="w-6 h-6 sm:w-8 sm:h-8 rounded bg-[#0A66C2] flex items-center justify-center text-white font-bold text-xs sm:text-sm flex-shrink-0">
             in
           </div>
-          <span className="text-sm sm:text-base font-semibold text-zinc-800 group-hover:text-blue-600 transition-colors">
-            DM on Linkedin
+          <span className="text-xs sm:text-sm md:text-base font-semibold text-zinc-800 group-hover:text-blue-600 transition-colors whitespace-nowrap">
+            <span className="hidden sm:inline">DM on </span>LinkedIn
           </span>
         </a>
       </motion.header>
 
+      {/* Mobile Floating Bottom Navigation Bar (Smart mobile app style) */}
+      <div className="fixed bottom-3.5 left-1/2 -translate-x-1/2 z-50 md:hidden flex items-center justify-center pointer-events-auto">
+        <LimelightNav className="shadow-xl border-zinc-300/80 scale-90 sm:scale-100" />
+      </div>
+
       {/* Hero Section with top padding for fixed navbar */}
-      <main id="home" className="flex-1 max-w-6xl w-full mx-auto px-6 pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-24 flex flex-col items-center justify-between">
+      <main id="home" className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 pt-20 sm:pt-28 md:pt-32 pb-16 md:pb-24 flex flex-col items-center justify-between">
         {/* Center Tagline & Social Proof */}
         <div className="flex flex-col items-center text-center w-full max-w-6xl mx-auto space-y-2">
           {/* Tagline */}
@@ -91,7 +96,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[62px] font-extrabold tracking-[-0.035em] leading-tight text-center w-full whitespace-nowrap mx-auto"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[62px] font-extrabold tracking-[-0.035em] leading-tight text-center w-full whitespace-normal sm:whitespace-nowrap mx-auto px-2"
           >
             <span className="text-zinc-900">Your Experience </span>
             <span
@@ -172,15 +177,15 @@ export default function Home() {
       <WrittenTestimonials />
 
       {/* How It Works / Journey Section */}
-      <section id="journey" className="w-full max-w-6xl mx-auto px-6 pt-12 md:pt-20 pb-28 md:pb-36 relative z-10">
+      <section id="journey" className="w-full max-w-6xl mx-auto px-4 sm:px-6 pt-10 sm:pt-12 md:pt-20 pb-16 sm:pb-28 md:pb-36 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center mb-10 md:mb-16"
+          className="text-center mb-8 sm:mb-10 md:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900">
             Your Journey to a Better Resume
           </h2>
         </motion.div>

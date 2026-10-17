@@ -81,21 +81,21 @@ export default function FeatureCardsSection() {
   return (
     <section
       id="services"
-      className="relative z-10 py-16 sm:py-24 overflow-hidden"
+      className="relative z-10 py-12 sm:py-24 overflow-hidden"
     >
-      <div className="max-w-screen-xl mx-auto px-6 sm:px-10">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex w-full flex-col items-center justify-start gap-3.5 overflow-hidden mb-8 sm:mb-12"
+          className="flex w-full flex-col items-center justify-start gap-3.5 overflow-hidden mb-6 sm:mb-12"
         >
           <h2
-            className="flex w-full max-w-2xl justify-center text-center font-extrabold tracking-tight whitespace-nowrap text-zinc-900"
+            className="flex w-full max-w-2xl justify-center text-center font-extrabold tracking-tight whitespace-normal sm:whitespace-nowrap text-zinc-900"
             style={{
-              fontSize: "clamp(2rem, 5vw, 3.8rem)",
+              fontSize: "clamp(1.85rem, 5vw, 3.8rem)",
               lineHeight: 1.1,
             }}
           >
@@ -207,7 +207,7 @@ function FeatureCard({
           onClick();
         }
       }}
-      className={`group relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl cursor-pointer select-none transition-all duration-300 text-left overflow-hidden bg-white ${
+      className={`group relative flex flex-col justify-between p-4 sm:p-6 rounded-xl sm:rounded-2xl cursor-pointer select-none transition-all duration-300 text-left overflow-hidden bg-white ${
         isActive
           ? "border-2 border-zinc-900 shadow-[0_10px_30px_-6px_rgba(0,0,0,0.12)] -translate-y-1"
           : "border border-zinc-200/90 hover:border-zinc-300 hover:shadow-md hover:-translate-y-0.5 shadow-2xs"

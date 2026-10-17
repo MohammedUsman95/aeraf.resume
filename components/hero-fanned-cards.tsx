@@ -53,8 +53,7 @@ export default function HeroFannedCards({
 }: HeroFannedCardsProps) {
   return (
     <div
-      className="relative mt-8 md:mt-12 flex items-end justify-center w-full overflow-visible"
-      style={{ height: 380, width: "100%" }}
+      className="relative mt-6 sm:mt-8 md:mt-12 flex items-end justify-center w-full overflow-visible h-[260px] xs:h-[310px] sm:h-[380px]"
     >
       {/* Soft ambient depth aura surrounding and framing the card deck */}
       <motion.div
@@ -123,15 +122,15 @@ export default function HeroFannedCards({
           style={{
             transformOrigin: "bottom center",
             zIndex: card.z,
-            x: `calc(${(i - 2)} * clamp(58px, 11vw, 120px))`,
+            x: `calc(${(i - 2)} * clamp(32px, 8.5vw, 120px))`,
           }}
         >
-          <Card className="w-40 sm:w-48 md:w-56 aspect-[1/1.414] p-1 sm:p-1.5 overflow-hidden shadow-[0_6px_22px_rgba(0,0,0,0.18),0_12px_30px_-4px_rgba(0,0,0,0.22)] hover:shadow-[0_12px_35px_rgba(0,0,0,0.28),0_24px_48px_-4px_rgba(0,0,0,0.34)] transition-shadow duration-300 border-[1.5px] border-zinc-900 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center">
-            <CardContent className="p-0 w-full h-full flex items-center justify-center overflow-hidden rounded-[8px] sm:rounded-[12px]">
+          <Card className="w-28 xs:w-36 sm:w-48 md:w-56 aspect-[1/1.414] p-1 sm:p-1.5 overflow-hidden shadow-[0_6px_22px_rgba(0,0,0,0.18),0_12px_30px_-4px_rgba(0,0,0,0.22)] hover:shadow-[0_12px_35px_rgba(0,0,0,0.28),0_24px_48px_-4px_rgba(0,0,0,0.34)] transition-shadow duration-300 border-[1.5px] border-zinc-900 rounded-lg sm:rounded-2xl bg-white flex items-center justify-center">
+            <CardContent className="p-0 w-full h-full flex items-center justify-center overflow-hidden rounded-[6px] sm:rounded-[12px]">
               <img
                 src={card.src}
                 alt={card.alt}
-                className="w-full h-full object-cover object-top rounded-[6px] sm:rounded-[10px]"
+                className="w-full h-full object-cover object-top rounded-[4px] sm:rounded-[10px]"
               />
             </CardContent>
           </Card>

@@ -19,38 +19,38 @@ export default function FooterSection() {
   };
 
   return (
-    <footer className="w-full relative z-20 border-t border-zinc-200/80 bg-zinc-50/70 pt-16 pb-12 mt-12">
-      <div className="max-w-6xl mx-auto px-6">
+    <footer className="w-full relative z-20 border-t border-zinc-200/80 bg-zinc-50/70 pt-12 sm:pt-16 pb-24 md:pb-12 mt-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Top Call To Action Card */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 text-white rounded-[28px] p-8 sm:p-12 mb-16 shadow-2xl overflow-hidden border border-zinc-800"
+          className="relative bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 text-white rounded-2xl sm:rounded-[28px] p-6 sm:p-12 mb-12 sm:mb-16 shadow-2xl overflow-hidden border border-zinc-800"
         >
           {/* Subtle decorative glow */}
           <div className="absolute -right-16 -top-16 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -left-16 -bottom-16 w-80 h-80 bg-red-600/15 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 sm:gap-8">
             <div className="max-w-xl">
-              <span className="inline-block text-xs uppercase tracking-widest text-blue-400 font-bold mb-3">
+              <span className="inline-block text-xs uppercase tracking-widest text-blue-400 font-bold mb-2 sm:mb-3">
                 Ready for the Next Level?
               </span>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight">
+              <h3 className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight">
                 Transform Your Resume. Land More Interviews.
               </h3>
             </div>
 
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 w-full md:w-auto">
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-[#0A66C2] hover:bg-[#004182] text-white font-bold text-base shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all group"
+                className="inline-flex items-center justify-center w-full md:w-auto gap-3 px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-[#0A66C2] hover:bg-[#004182] text-white font-bold text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all group"
               >
-                <div className="w-7 h-7 rounded-lg bg-white flex items-center justify-center text-[#0A66C2] font-black text-sm group-hover:scale-105 transition-transform">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white flex items-center justify-center text-[#0A66C2] font-black text-xs sm:text-sm group-hover:scale-105 transition-transform">
                   in
                 </div>
                 <span>DM on LinkedIn</span>
@@ -202,7 +202,7 @@ export default function FooterSection() {
 
             <button
               onClick={(e) => scrollToSection(e, "top")}
-              className="inline-flex items-center justify-between px-4 py-2.5 rounded-xl border border-zinc-200 bg-white hover:bg-zinc-50 hover:border-zinc-300 text-zinc-700 hover:text-zinc-900 text-xs sm:text-sm font-semibold transition-all shadow-2xs group w-fit cursor-pointer"
+              className="inline-flex items-center justify-between w-full sm:w-fit px-4 py-2.5 rounded-xl border border-zinc-200 bg-white hover:bg-zinc-50 hover:border-zinc-300 text-zinc-700 hover:text-zinc-900 text-xs sm:text-sm font-semibold transition-all shadow-2xs group cursor-pointer"
             >
               <span>Back to Top</span>
               <svg
